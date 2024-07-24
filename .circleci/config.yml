@@ -28,6 +28,7 @@ jobs:
       - run: php run.php --do=init_fs
       # create a config file with Discope specifics
       - run: echo $JSON_CONFIG > config/config.json
+      - run: cat config/config.json
       # check that mandatory directories are present and have correct access rights set
       - run: php run.php --do=test_fs-consistency
       # check ability to connect to the dbms service
