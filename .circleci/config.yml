@@ -21,7 +21,8 @@ jobs:
       - run: rm -rf .circleci
       - run: git clone https://github.com/equalframework/equal.git .
       - run: git checkout dev-2.0
-      - run: export JSON_CONFIG=$(echo "{\"DEFAULT_LANG\": \"fr\"}")
+      - run: |
+          export JSON_CONFIG=$(echo "{\"DEFAULT_LANG\": \"fr\"}")
       - run: echo $JSON_CONFIG > config/config.json
       # assign folders permissions
       - run: php run.php --do=init_fs
